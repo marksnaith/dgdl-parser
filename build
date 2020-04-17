@@ -11,13 +11,30 @@ if [[ "$1" == "test" ]]; then
 
   antlr4 -o ./test grammar/*.g4
 
+  if [[ $? -ne 0 ]]; then
+    echo "Grammar compile failed"
+    exit 1
+  fi
+
   javac ./test/grammar/*.java
 
-  cd ./test/grammar
+  if [[ $? -ne 0 ]]; then
+    echo "Antlr compile failed"
+    exit 1
+  fi
 
-  echo "Enter expression:"
+  if [[ "$2" == "-f" ]]; then
+    TEXT=$(cat $3)
 
-  grun dgdl system -gui
+    cd ./test/grammar
+
+    echo $TEXT | grun dgdl system -gui
+  else
+
+    echo "Enter expression:"
+
+    grun dgdl system -gui
+  fi
 else
   OUTPUT=$1
 

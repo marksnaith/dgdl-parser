@@ -1,9 +1,9 @@
 from antlr.grammar import *
 from antlr4 import *
 from .concrete_dgdl_listener import ConcreteDGDLListener
+from .dgdl_element import DGDLElement
 
-
-class System:
+class System(DGDLElement):
 
     def __init__(self):
         self.identifier = ""
@@ -18,17 +18,6 @@ class System:
         walker = ParseTreeWalker()
         walker.walk(listener, tree)
 
-        self = listener.get_system()
+        self = listener.get_system(True)
 
         print(self)
-
-    def __str__(self):
-        repr = {
-            "identifier": self.identifier,
-            "games": {}
-        }
-
-        for k,v in self.games.items():
-            repr["games"][k] = v.__repr__()
-
-        return str(repr)

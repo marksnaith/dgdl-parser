@@ -1,17 +1,16 @@
+from .dgdl_element import DGDLElement
 
-
-
-class Game:
+class Game(DGDLElement):
 
     def __init__(self, identifier):
         self.identifier = identifier
-        pass
+        self.roles = []
+        self.players = []
+        self.players_min = {}
+        self.players_max = {}
+        self.stores = []
+        self.rules = []
 
-    def __repr__(self):
-        repr = {
-            "identifier": self.identifier
-        }
-        return repr
-
-    def __str__(self):
-        return str(self.__repr__())
+    def set_min_max_players(self, identifier, min, max):
+        self.players_min[identifier] = min
+        self.players_max[identifier] = max
