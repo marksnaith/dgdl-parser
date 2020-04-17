@@ -1,0 +1,12 @@
+TestSystem{
+  TestGame{
+    Composition
+    Rules
+    Interactions
+  }
+  TestGame2{
+    Composition
+    Rules
+    Interactions
+  }
+}

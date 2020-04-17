@@ -1,0 +1,33 @@
+export CLASSPATH=".:/usr/local/lib/antlr-4.8-complete.jar:$CLASSPATH"
+alias antlr4='java -jar /usr/local/lib/antlr-4.8-complete.jar'
+alias grun='java org.antlr.v4.gui.TestRig'
+
+
+if [[ "$1" == "test" ]]; then
+  if [[ -d "test" ]]; then
+    rm -rf test
+  fi
+  mkdir test
+
+  antlr4 -o ./test grammar/*.g4
+
+  javac ./test/grammar/*.java
+
+  cd ./test/grammar
+
+  echo "Enter expression:"
+
+  grun dgdl system -gui
+else
+  OUTPUT=$1
+
+  if [[ -d $OUTPUT ]]; then
+    rm -rf $OUTPUT
+  fi
+  mkdir $OUTPUT
+
+  antlr4 -o $OUTPUT -Dlanguage=Python3 grammar/*.g4
+  echo 'from antlr.grammar.dgdlListener import dgdlListener' > $OUTPUT/grammar/__init__.py
+  echo 'from antlr.grammar.dgdlLexer import dgdlLexer' >> $OUTPUT/grammar/__init__.py
+  echo 'from antlr.grammar.dgdlParser import dgdlParser' >> $OUTPUT/grammar/__init__.py
+fi
