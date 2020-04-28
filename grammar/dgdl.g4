@@ -6,13 +6,13 @@
 
 grammar dgdl;
 
-system :
+/*system :
     ( systemID '{' (game)+ '}') EOF;
 
-systemID : identifier;
+systemID : identifier;*/
 
 game :
-    gameID '{' composition (rules)* (interaction)+ '}';
+    gameID '{' composition (rules)* (interaction)+ '}' EOF;
 
 gameID : identifier;
 
@@ -108,7 +108,15 @@ unassignment :
 
 user : identifier;
 
-conditional : 'conditional';
+conditional :
+    'if' requirements 'then' '{' effects '}' condelseif? condelse?;
+
+requirements : '{requirements}';
+
+condelseif :
+    'elseif ' requirements 'then' '{' effects '}' condelseif? condelse?;
+
+condelse : 'else' '{' effects '}';
 
 /* Temporary for MWE */
 interaction: identifier;

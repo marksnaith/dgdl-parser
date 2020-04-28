@@ -1,9 +1,8 @@
-TestSystem{
-  TestGame{
+TestGame{
     roles{Role, Role2}
     participants{min:2, max:undefined}
     player{id:Test, min:2, max:2}
-    player{id:Test2, roles{Role}}
+    player{id:Test2, roles{TestRole}}
     store{id:TestStore, owner:Test, structure:set, visibility:public, {Content}}
     backtracking{on}
 
@@ -11,10 +10,15 @@ TestSystem{
     rule{id:TestRule, scope:initial, {
       move(add, next, TestMove)
       & move(add, next, SecondTestMove, $Test, {p}, User)
-      & conditional
+      & if {requirements} then{
+        move(add, next, ThirdTestMove, $Test, {p}, User)
+      }elseif {requirements} then{
+        move(add, next, FourthTestMove, $Test, {p}, User)
+      }else{
+        move(add, next, FifthTestMove, $Test, {p}, User)
+      }
     }}
 
 
     Interactions
-  }
 }

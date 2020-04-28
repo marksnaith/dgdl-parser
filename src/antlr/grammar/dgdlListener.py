@@ -8,24 +8,6 @@ else:
 # This class defines a complete listener for a parse tree produced by dgdlParser.
 class dgdlListener(ParseTreeListener):
 
-    # Enter a parse tree produced by dgdlParser#system.
-    def enterSystem(self, ctx:dgdlParser.SystemContext):
-        pass
-
-    # Exit a parse tree produced by dgdlParser#system.
-    def exitSystem(self, ctx:dgdlParser.SystemContext):
-        pass
-
-
-    # Enter a parse tree produced by dgdlParser#systemID.
-    def enterSystemID(self, ctx:dgdlParser.SystemIDContext):
-        pass
-
-    # Exit a parse tree produced by dgdlParser#systemID.
-    def exitSystemID(self, ctx:dgdlParser.SystemIDContext):
-        pass
-
-
     # Enter a parse tree produced by dgdlParser#game.
     def enterGame(self, ctx:dgdlParser.GameContext):
         pass
@@ -224,6 +206,186 @@ class dgdlListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by dgdlParser#effects.
+    def enterEffects(self, ctx:dgdlParser.EffectsContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#effects.
+    def exitEffects(self, ctx:dgdlParser.EffectsContext):
+        pass
+
+
+    # Enter a parse tree produced by dgdlParser#effect.
+    def enterEffect(self, ctx:dgdlParser.EffectContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#effect.
+    def exitEffect(self, ctx:dgdlParser.EffectContext):
+        pass
+
+
+    # Enter a parse tree produced by dgdlParser#move.
+    def enterMove(self, ctx:dgdlParser.MoveContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#move.
+    def exitMove(self, ctx:dgdlParser.MoveContext):
+        pass
+
+
+    # Enter a parse tree produced by dgdlParser#moveaction.
+    def enterMoveaction(self, ctx:dgdlParser.MoveactionContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#moveaction.
+    def exitMoveaction(self, ctx:dgdlParser.MoveactionContext):
+        pass
+
+
+    # Enter a parse tree produced by dgdlParser#movetime.
+    def enterMovetime(self, ctx:dgdlParser.MovetimeContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#movetime.
+    def exitMovetime(self, ctx:dgdlParser.MovetimeContext):
+        pass
+
+
+    # Enter a parse tree produced by dgdlParser#moveID.
+    def enterMoveID(self, ctx:dgdlParser.MoveIDContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#moveID.
+    def exitMoveID(self, ctx:dgdlParser.MoveIDContext):
+        pass
+
+
+    # Enter a parse tree produced by dgdlParser#addressee.
+    def enterAddressee(self, ctx:dgdlParser.AddresseeContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#addressee.
+    def exitAddressee(self, ctx:dgdlParser.AddresseeContext):
+        pass
+
+
+    # Enter a parse tree produced by dgdlParser#content.
+    def enterContent(self, ctx:dgdlParser.ContentContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#content.
+    def exitContent(self, ctx:dgdlParser.ContentContext):
+        pass
+
+
+    # Enter a parse tree produced by dgdlParser#storeOp.
+    def enterStoreOp(self, ctx:dgdlParser.StoreOpContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#storeOp.
+    def exitStoreOp(self, ctx:dgdlParser.StoreOpContext):
+        pass
+
+
+    # Enter a parse tree produced by dgdlParser#storeaction.
+    def enterStoreaction(self, ctx:dgdlParser.StoreactionContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#storeaction.
+    def exitStoreaction(self, ctx:dgdlParser.StoreactionContext):
+        pass
+
+
+    # Enter a parse tree produced by dgdlParser#statusUpdate.
+    def enterStatusUpdate(self, ctx:dgdlParser.StatusUpdateContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#statusUpdate.
+    def exitStatusUpdate(self, ctx:dgdlParser.StatusUpdateContext):
+        pass
+
+
+    # Enter a parse tree produced by dgdlParser#status.
+    def enterStatus(self, ctx:dgdlParser.StatusContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#status.
+    def exitStatus(self, ctx:dgdlParser.StatusContext):
+        pass
+
+
+    # Enter a parse tree produced by dgdlParser#roleAssignment.
+    def enterRoleAssignment(self, ctx:dgdlParser.RoleAssignmentContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#roleAssignment.
+    def exitRoleAssignment(self, ctx:dgdlParser.RoleAssignmentContext):
+        pass
+
+
+    # Enter a parse tree produced by dgdlParser#assignment.
+    def enterAssignment(self, ctx:dgdlParser.AssignmentContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#assignment.
+    def exitAssignment(self, ctx:dgdlParser.AssignmentContext):
+        pass
+
+
+    # Enter a parse tree produced by dgdlParser#unassignment.
+    def enterUnassignment(self, ctx:dgdlParser.UnassignmentContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#unassignment.
+    def exitUnassignment(self, ctx:dgdlParser.UnassignmentContext):
+        pass
+
+
+    # Enter a parse tree produced by dgdlParser#user.
+    def enterUser(self, ctx:dgdlParser.UserContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#user.
+    def exitUser(self, ctx:dgdlParser.UserContext):
+        pass
+
+
+    # Enter a parse tree produced by dgdlParser#conditional.
+    def enterConditional(self, ctx:dgdlParser.ConditionalContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#conditional.
+    def exitConditional(self, ctx:dgdlParser.ConditionalContext):
+        pass
+
+
+    # Enter a parse tree produced by dgdlParser#requirements.
+    def enterRequirements(self, ctx:dgdlParser.RequirementsContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#requirements.
+    def exitRequirements(self, ctx:dgdlParser.RequirementsContext):
+        pass
+
+
+    # Enter a parse tree produced by dgdlParser#condelseif.
+    def enterCondelseif(self, ctx:dgdlParser.CondelseifContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#condelseif.
+    def exitCondelseif(self, ctx:dgdlParser.CondelseifContext):
+        pass
+
+
+    # Enter a parse tree produced by dgdlParser#condelse.
+    def enterCondelse(self, ctx:dgdlParser.CondelseContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#condelse.
+    def exitCondelse(self, ctx:dgdlParser.CondelseContext):
+        pass
+
+
     # Enter a parse tree produced by dgdlParser#interaction.
     def enterInteraction(self, ctx:dgdlParser.InteractionContext):
         pass
@@ -266,6 +428,15 @@ class dgdlListener(ParseTreeListener):
 
     # Exit a parse tree produced by dgdlParser#number.
     def exitNumber(self, ctx:dgdlParser.NumberContext):
+        pass
+
+
+    # Enter a parse tree produced by dgdlParser#contentVar.
+    def enterContentVar(self, ctx:dgdlParser.ContentVarContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#contentVar.
+    def exitContentVar(self, ctx:dgdlParser.ContentVarContext):
         pass
 
 

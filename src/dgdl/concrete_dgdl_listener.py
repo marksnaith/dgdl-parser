@@ -3,6 +3,7 @@ from .game import Game
 from .player import Player
 from .store import Store
 from .rule import Rule
+from .conditional import Conditional
 
 class ConcreteDGDLListener(dgdlListener):
 
@@ -11,11 +12,10 @@ class ConcreteDGDLListener(dgdlListener):
         self.current_game = None
         self.current_player = None
         self.current_rule = None
+        self.current_conditional = None
+        self.current_elseif = None
         self.warnings = []
 
-    def enterSystem(self, ctx:dgdlParser.SystemContext):
-        identifier = ctx.systemID().identifier().getText()
-        self.system.identifier = identifier
 
     def enterGame(self, ctx:dgdlParser.GameContext):
         print("Entered game")
@@ -27,7 +27,7 @@ class ConcreteDGDLListener(dgdlListener):
         self.system.games[self.current_game.identifier] = self.current_game
         current_game = None
 
-    def enterRoleList(self, ctx:dgdlParser.RoleListContext):
+    '''def enterRoleList(self, ctx:dgdlParser.RoleListContext):
         if self.current_player is None:
             for r in ctx.role():
                 self.current_game.roles.append(r.getText())
@@ -50,7 +50,7 @@ class ConcreteDGDLListener(dgdlListener):
             max = 'undefined'
 
         self.current_game.min_participants = min
-        self.current_game.max_participants = max
+        self.current_game.max_participants = max'''
 
     def enterPlayer(self, ctx:dgdlParser.PlayerContext):
         self.current_player = Player()
@@ -109,10 +109,44 @@ class ConcreteDGDLListener(dgdlListener):
 
         self.current_rule.identifier = ctx.ruleID().identifier().getText()
         self.current_rule.scope = ctx.scopeType().getText()
+        self.current_rule.effects = []
+        self.current_rule.conditional = None
 
     def exitRules(self, ctx:dgdlParser.RulesContext):
         self.current_game.rules.append(self.current_rule)
         self.current_rule = None
+
+    def enterConditional(self, ctx:dgdlParser.ConditionalContext):
+        self.current_conditional = Conditional()
+
+        effects = ctx.effects()
+
+        for e in effects.effect():
+            effect = self.get_effect(e)
+
+        #for e in effects:
+        #    pass # add to conditional instance
+
+
+
+        print("Entered conditional")
+
+    def exitConditional(self, ctx:dgdlParser.ConditionalContext):
+        print("Exited conditional")
+        self.current_rule.conditional = self.current_conditional
+
+    def enterCondelseif(self, ctx:dgdlParser.CondelseifContext):
+        print("Entered elseif")
+        self.current_elseif = Conditional()
+
+    def exitCondelseif(self, ctx:dgdlParser.CondelseifContext):
+        print("Exit elseif")
+        self.current_conditional.add_elseif(self.current_elseif)
+
+
+    def get_effect(self, e:dgdlParser.EffectContext):
+        pass
+
 
     def record_warning(self, txt):
         self.warnings.append(txt)

@@ -1,5 +1,5 @@
 from dgdl import System
+from dgdl.builders import GameBuilder
 
 if __name__ == "__main__":
-    s = System()
-    s.load("testgame.dgdl")
+    s = GameBuilder().build('testgame.dgdl')

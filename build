@@ -28,12 +28,12 @@ if [[ "$1" == "test" ]]; then
 
     cd ./test/grammar
 
-    echo $TEXT | grun dgdl system -gui
+    echo $TEXT | grun dgdl game -gui
   else
 
     echo "Enter expression:"
 
-    grun dgdl system -gui
+    grun dgdl game -gui
   fi
 else
   OUTPUT=$1
