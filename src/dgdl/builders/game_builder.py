@@ -1,7 +1,11 @@
-from dgdl.game import Game
+from dgdl.elements.game import Game
 from . import *
 from antlr.grammar import *
 from antlr4 import *
+import sys
+from io import StringIO
+import json
+import ast
 
 class GameBuilder:
 
@@ -11,14 +15,31 @@ class GameBuilder:
                          InteractionBuilder()]
 
     def build(self, src):
+
         parser = dgdlParser(CommonTokenStream(dgdlLexer(FileStream(src))))
 
+        # assign stderr to a temporary stream to capture errors
+        sys.stderr = tmp = StringIO()
         tree = parser.game()
+        sys.stderr = sys.__stderr__
 
-        #listener = ConcreteDGDLListener(self)
+        val = tmp.getvalue().strip()
+
+        if val != "":
+            errors = val.split("\n")
+            print(errors)
+            return
+
         walker = ParseTreeWalker()
+
+        game = {}
 
         for b in self.builders:
             walker.walk(b, tree)
 
-            print(b.get_representation())
+            output = b.get_representation()
+
+            if output is not None:
+                game.update(output)
+
+        return Game(**game)

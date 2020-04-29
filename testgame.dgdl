@@ -1,24 +1,31 @@
-TestGame{
-    roles{Role, Role2}
-    participants{min:2, max:undefined}
-    player{id:Test, min:2, max:2}
-    player{id:Test2, roles{TestRole}}
-    store{id:TestStore, owner:Test, structure:set, visibility:public, {Content}}
-    backtracking{on}
+game(id:TestGame){
 
+    roles(Role, Role2)
+    participants(min:2, max:undefined)
+    player(id:Test, min:2, max:2)
+    player(id:Test2, roles(TestRole))
 
-    rule{id:TestRule, scope:initial, {
-      move(add, next, TestMove)
-      & move(add, next, SecondTestMove, $Test, {p}, User)
-      & if {requirements} then{
-        move(add, next, ThirdTestMove, $Test, {p}, User)
-      }elseif {requirements} then{
-        move(add, next, FourthTestMove, $Test, {p}, User)
-      }else{
-        move(add, next, FifthTestMove, $Test, {p}, User)
+    store(id:TestStore, owner:Test, structure:set, visibility:public, {c})
+
+    backtracking(on)
+
+    rule(id:TestRule, scope:initial){
+        move(add, next, TestMove, $User, {p});
+
+        if (!inrole(Player, Test) && inspect(in, {p}, TestStore, past) && event(past, TestMove, {p}, TestUser)){
+          move(add, next, Test, Test);
+        }else{
+          move(add, next, Test, Test);
+          store(add, {p, "hi"}, TestStore);
+          status(active, TestGame);
+          assign(Test, Role2);
+          unassign(Test, Role2);
+        };
+    }
+
+    interaction(id:TestMove, addressee:TestUser, content:{p}, opener:"Test"){
+      if(inrole(Player, Test)){
+        move(add, next, Test2, TestPlayer);
       }
-    }}
-
-
-    Interactions
+    }
 }

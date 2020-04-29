@@ -368,6 +368,69 @@ class dgdlListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by dgdlParser#condition.
+    def enterCondition(self, ctx:dgdlParser.ConditionContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#condition.
+    def exitCondition(self, ctx:dgdlParser.ConditionContext):
+        pass
+
+
+    # Enter a parse tree produced by dgdlParser#event.
+    def enterEvent(self, ctx:dgdlParser.EventContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#event.
+    def exitEvent(self, ctx:dgdlParser.EventContext):
+        pass
+
+
+    # Enter a parse tree produced by dgdlParser#eventpos.
+    def enterEventpos(self, ctx:dgdlParser.EventposContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#eventpos.
+    def exitEventpos(self, ctx:dgdlParser.EventposContext):
+        pass
+
+
+    # Enter a parse tree produced by dgdlParser#roleInspection.
+    def enterRoleInspection(self, ctx:dgdlParser.RoleInspectionContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#roleInspection.
+    def exitRoleInspection(self, ctx:dgdlParser.RoleInspectionContext):
+        pass
+
+
+    # Enter a parse tree produced by dgdlParser#storeInspection.
+    def enterStoreInspection(self, ctx:dgdlParser.StoreInspectionContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#storeInspection.
+    def exitStoreInspection(self, ctx:dgdlParser.StoreInspectionContext):
+        pass
+
+
+    # Enter a parse tree produced by dgdlParser#storepos.
+    def enterStorepos(self, ctx:dgdlParser.StoreposContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#storepos.
+    def exitStorepos(self, ctx:dgdlParser.StoreposContext):
+        pass
+
+
+    # Enter a parse tree produced by dgdlParser#storetime.
+    def enterStoretime(self, ctx:dgdlParser.StoretimeContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#storetime.
+    def exitStoretime(self, ctx:dgdlParser.StoretimeContext):
+        pass
+
+
     # Enter a parse tree produced by dgdlParser#condelseif.
     def enterCondelseif(self, ctx:dgdlParser.CondelseifContext):
         pass
@@ -392,6 +455,15 @@ class dgdlListener(ParseTreeListener):
 
     # Exit a parse tree produced by dgdlParser#interaction.
     def exitInteraction(self, ctx:dgdlParser.InteractionContext):
+        pass
+
+
+    # Enter a parse tree produced by dgdlParser#opener.
+    def enterOpener(self, ctx:dgdlParser.OpenerContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#opener.
+    def exitOpener(self, ctx:dgdlParser.OpenerContext):
         pass
 
 

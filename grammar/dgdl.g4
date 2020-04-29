@@ -12,27 +12,27 @@ grammar dgdl;
 systemID : identifier;*/
 
 game :
-    gameID '{' composition (rules)* (interaction)+ '}' EOF;
+    'game' '(' 'id' ':' gameID ')' '{' composition (rules)* (interaction)+ '}' EOF;
 
 gameID : identifier;
 
 composition: roleList? participants player+ store* backtrack?;
 
 roleList :
-    'roles' '{' role (',' role)* '}';
+    'roles' '(' role (',' role)* ')';
 
 role : (LISTENER | SPEAKER | identifier);
 
 participants :
-    'participants' '{' 'min' ':' minplayers ',' 'max' ':' maxplayers '}';
+    'participants' '(' 'min' ':' minplayers ',' 'max' ':' maxplayers ')';
 
 player :
-    'player' '{' 'id' ':' playerID (',' roleList)? (',' 'min' ':' minplayers)? (',' 'max' ':' maxplayers)? '}';
+    'player' '(' 'id' ':' playerID (',' roleList)? (',' 'min' ':' minplayers)? (',' 'max' ':' maxplayers)? ')';
 
 playerID : identifier;
 
 store :
-    'store' '{' 'id' ':' storeID ',' 'owner' ':' storeOwner ',' 'structure' ':' storeStructure ',' 'visibility' ':' storeVisibility (',' storeContent)? '}';
+    'store' '(' 'id' ':' storeID ',' 'owner' ':' storeOwner ',' 'structure' ':' storeStructure ',' 'visibility' ':' storeVisibility (',' storeContent)? ')';
 
 storeID : identifier;
 
@@ -46,18 +46,17 @@ storeVisibility :
     (PUBLIC | PRIVATE);
 
 storeContent :
-    '{' identifier (',' identifier)* '}';
+    '{' (contentVar | STRINGLITERAL) (',' (contentVar| STRINGLITERAL))* '}';
 backtrack :
-    'backtracking' '{' onoff '}';
+    'backtracking' '(' onoff ')';
 
 onoff : ('on' | 'off');
 
 minplayers : number;
 maxplayers : (number | 'undefined');
 
-
 rules :
-    'rule' '{' 'id' ':' ruleID ',' 'scope' ':' scopeType ',' ruleBody '}';
+    'rule' '(' 'id' ':' ruleID ',' 'scope' ':' scopeType ')' ruleBody;
 
 ruleID : identifier;
 
@@ -65,13 +64,13 @@ scopeType :
     (INITIAL | TURNWISE | MOVEWISE);
 
 ruleBody :
-    '{' (effects ('&' conditional)? | conditional) '}';
+    '{' (effects (conditional)? | conditional) '}';
 
 effects :
-    effect ('&' effect)*;
+    effect+; // (effect)*;
 
 effect :
-    (move | storeOp | statusUpdate | roleAssignment);
+    (move | storeOp | statusUpdate | roleAssignment) ';';
 
 move :
   'move' '(' moveaction ',' movetime ',' moveID (',' addressee)? (',' content)? (',' user)? ')';
@@ -109,17 +108,45 @@ unassignment :
 user : identifier;
 
 conditional :
-    'if' requirements 'then' '{' effects '}' condelseif? condelse?;
+    'if' '(' requirements ')' '{' effects '}' condelseif? condelse? ';'?;
 
-requirements : '{requirements}';
+requirements :
+    (condition (AMPAND condition)* );
+
+condition :
+    NEG? (event | roleInspection | storeInspection);
+
+event :
+    'event' '(' eventpos ',' moveID  (',' content)? (',' user)? ')';
+
+eventpos :
+    ('last' | '!last' | 'past' | '!past');
+
+roleInspection :
+    'inrole' '(' playerID ',' role ')';
+
+storeInspection :
+    'inspect' '(' storepos ',' storeContent ',' storeID (',' user)? (',' storetime)? ')';
+
+storepos : ('in' | 'on' | 'top' );
+
+storetime : ('initial' | 'past' | 'current');
+
 
 condelseif :
     'elseif ' requirements 'then' '{' effects '}' condelseif? condelse?;
 
 condelse : 'else' '{' effects '}';
 
+/* === Interactions === */
+
+interaction :
+    'interaction' '(' 'id' ':' moveID (',' 'addressee' ':' user)? (',' 'content' ':' content)? (',' 'opener' ':' opener)? ')' ruleBody;
+
+opener : STRINGLITERAL;
+
 /* Temporary for MWE */
-interaction: identifier;
+
 
 /* Common rules */
 
@@ -140,6 +167,9 @@ WS          : (' ' | '\r' | '\t' | '\u000C' | '\n')+ -> channel(HIDDEN);
 
 MOVEACTION : ('add' | 'remove');
 MOVETIME : ('next' | 'future');
+
+AMPAND : '&&';
+NEG : '!';
 
 ONOFF        : 'on' | 'off';
 LISTENER  : 'listener';
