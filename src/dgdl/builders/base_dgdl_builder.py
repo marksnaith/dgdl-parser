@@ -1,4 +1,4 @@
-from antlr import *
+from dgdl.antlr import *
 
 class BaseDGDLBuilder(dgdlListener):
 

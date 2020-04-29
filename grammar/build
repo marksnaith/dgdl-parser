@@ -41,6 +41,8 @@ if [[ "$1" == "test" ]]; then
 else
   OUTPUT=$1
 
+  echo $OUTPUT
+
   if [[ -d $OUTPUT ]]; then
     rm -rf $OUTPUT
   fi
@@ -48,7 +50,7 @@ else
 
   antlr4 -o $OUTPUT -Dlanguage=Python3 *.g4
 
-  echo 'from antlr.dgdlListener import dgdlListener' > $OUTPUT/__init__.py
-  echo 'from antlr.dgdlLexer import dgdlLexer' >> $OUTPUT/__init__.py
-  echo 'from antlr.dgdlParser import dgdlParser' >> $OUTPUT/__init__.py
+  echo 'from dgdl.antlr.dgdlListener import dgdlListener' > $OUTPUT/__init__.py
+  echo 'from dgdl.antlr.dgdlLexer import dgdlLexer' >> $OUTPUT/__init__.py
+  echo 'from dgdl.antlr.dgdlParser import dgdlParser' >> $OUTPUT/__init__.py
 fi
