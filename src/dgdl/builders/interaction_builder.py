@@ -1,6 +1,6 @@
 from . import RuleInteractionBuilder
 from dgdl.elements import Interaction
-from antlr.grammar import *
+from antlr import *
 
 class InteractionBuilder(RuleInteractionBuilder):
 

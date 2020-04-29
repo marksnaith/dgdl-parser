@@ -9,14 +9,14 @@ if [[ "$1" == "test" ]]; then
   fi
   mkdir test
 
-  antlr4 -o ./test grammar/*.g4
+  antlr4 -o ./test *.g4
 
   if [[ $? -ne 0 ]]; then
     echo "Grammar compile failed"
     exit 1
   fi
 
-  javac ./test/grammar/*.java
+  javac ./test/*.java
 
   if [[ $? -ne 0 ]]; then
     echo "Antlr compile failed"
@@ -43,8 +43,9 @@ else
   fi
   mkdir $OUTPUT
 
-  antlr4 -o $OUTPUT -Dlanguage=Python3 grammar/*.g4
-  echo 'from antlr.grammar.dgdlListener import dgdlListener' > $OUTPUT/grammar/__init__.py
-  echo 'from antlr.grammar.dgdlLexer import dgdlLexer' >> $OUTPUT/grammar/__init__.py
-  echo 'from antlr.grammar.dgdlParser import dgdlParser' >> $OUTPUT/grammar/__init__.py
+  antlr4 -o $OUTPUT -Dlanguage=Python3 *.g4
+
+  echo 'from antlr.dgdlListener import dgdlListener' > $OUTPUT/__init__.py
+  echo 'from antlr.dgdlLexer import dgdlLexer' >> $OUTPUT/__init__.py
+  echo 'from antlr.dgdlParser import dgdlParser' >> $OUTPUT/__init__.py
 fi

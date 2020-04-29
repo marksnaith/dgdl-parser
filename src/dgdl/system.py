@@ -1,4 +1,4 @@
-# from antlr.grammar import *
+# from antlr import *
 # from antlr4 import *
 # from .concrete_dgdl_listener import ConcreteDGDLListener
 # from .dgdl_element import DGDLElement

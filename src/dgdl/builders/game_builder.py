@@ -1,6 +1,6 @@
 from dgdl.elements.game import Game
 from . import *
-from antlr.grammar import *
+from antlr import *
 from antlr4 import *
 import sys
 from io import StringIO

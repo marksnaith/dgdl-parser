@@ -1,4 +1,4 @@
-from antlr.grammar import *
+from antlr import *
 from .base_dgdl_builder import BaseDGDLBuilder
 from dgdl.elements import *
 

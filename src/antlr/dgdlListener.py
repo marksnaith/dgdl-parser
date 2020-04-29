@@ -1,4 +1,4 @@
-# Generated from grammar/dgdl.g4 by ANTLR 4.8
+# Generated from dgdl.g4 by ANTLR 4.8
 from antlr4 import *
 if __name__ is not None and "." in __name__:
     from .dgdlParser import dgdlParser
