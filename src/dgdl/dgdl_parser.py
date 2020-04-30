@@ -9,6 +9,7 @@ class DGDLParser:
 
     def parse(self, input_file):
         self.parsed = GameBuilder().build(input_file)
+        return self.parsed
 
     def json(self):
         return json.dumps(ast.literal_eval(str(self.parsed)), indent=2)
