@@ -25,7 +25,7 @@ game(id:TestGame){
 
     interaction(id:TestMove, addressee:TestUser, content:{p}, opener:"Test"){
       if(inrole(Player, Test)){
-        move(add, next, Test2, TestPlayer);
+        move(add, next, Test2, $Test, TestPlayer);
       }
     }
 }
