@@ -1,4 +1,4 @@
-from builders import GameBuilder
+from dgdl.builders import GameBuilder
 import json
 import ast
 
