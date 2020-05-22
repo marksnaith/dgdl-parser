@@ -143,6 +143,15 @@ class dgdlListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by dgdlParser#turntakingtype.
+    def enterTurntakingtype(self, ctx:dgdlParser.TurntakingtypeContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#turntakingtype.
+    def exitTurntakingtype(self, ctx:dgdlParser.TurntakingtypeContext):
+        pass
+
+
     # Enter a parse tree produced by dgdlParser#backtrack.
     def enterBacktrack(self, ctx:dgdlParser.BacktrackContext):
         pass

@@ -49,7 +49,9 @@ storeContent :
     '{' (contentVar | STRINGLITERAL) (',' (contentVar| STRINGLITERAL))* '}';
 
 turntaking :
-    'turntaking' '(' ('strict' | 'liberal') ')';
+    'turntaking' '(' turntakingtype ')';
+
+turntakingtype : ('strict' | 'liberal');
 
 backtrack :
     'backtracking' '(' onoff ')';

@@ -10,6 +10,7 @@ class CompositionBuilder(BaseDGDLBuilder):
             "roles": [],
             "players": [],
             "stores": [],
+            "turntaking": "strict",
             "backtracking": False,
             "interactions": []
         }
@@ -86,6 +87,10 @@ class CompositionBuilder(BaseDGDLBuilder):
 
             if onoff == "on":
                 self.composition["backtracking"] = True
+
+    def enterTurntaking(self, ctx):
+        if ctx.turntakingtype() is not None:
+            self.composition["turntaking"] = ctx.turntakingtype().getText()
 
     def get_representation(self):
         return self.composition

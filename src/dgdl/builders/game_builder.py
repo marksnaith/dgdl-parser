@@ -42,4 +42,6 @@ class GameBuilder:
             if output is not None:
                 game.update(output)
 
+        print(game)
+
         return Game(**game)
