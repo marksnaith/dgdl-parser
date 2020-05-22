@@ -16,7 +16,7 @@ game :
 
 gameID : identifier;
 
-composition: roleList? participants player+ store* backtrack?;
+composition: roleList? participants player+ store* turntaking? backtrack?;
 
 roleList :
     'roles' '(' role (',' role)* ')';
@@ -47,6 +47,10 @@ storeVisibility :
 
 storeContent :
     '{' (contentVar | STRINGLITERAL) (',' (contentVar| STRINGLITERAL))* '}';
+
+turntaking :
+    'turntaking' '(' ('strict' | 'liberal') ')';
+
 backtrack :
     'backtracking' '(' onoff ')';
 
