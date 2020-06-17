@@ -27,8 +27,7 @@ class GameBuilder:
 
         if val != "":
             errors = val.split("\n")
-            print(errors)
-            return
+            return errors
 
         walker = ParseTreeWalker()
 
@@ -41,7 +40,5 @@ class GameBuilder:
 
             if output is not None:
                 game.update(output)
-
-        print(game)
 
         return Game(**game)
