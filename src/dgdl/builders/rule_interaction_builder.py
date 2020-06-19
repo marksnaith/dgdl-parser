@@ -135,7 +135,7 @@ class RuleInteractionBuilder(BaseDGDLBuilder):
 
     def enterSave(self, ctx):
         content = ctx.content()
-        content = [c.getText() for c in content.contentVar()]
+        content = [c.getText() for c in content.contentVar()] + [s.getText() for s in content.STRINGLITERAL()]
 
         variable = ctx.runtimeVar().identifier().getText()
 
