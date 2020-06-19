@@ -100,7 +100,7 @@ class RuleInteractionBuilder(BaseDGDLBuilder):
             addressee = addressee.getText()
 
         if content is not None:
-            content = [c.getText() for c in content.contentVar()]
+            content = [c.getText() for c in content.contentVar()] + [c.getText() for c in content.runtimeVar()]
 
         if user is not None:
             user = user.getText()

@@ -90,7 +90,7 @@ moveID : identifier;
 addressee : '$' identifier;
 
 content :
-    '{' contentVar (',' contentVar)* '}';
+    '{' (contentVar | runtimeVar) (',' contentVar | runtimeVar)* '}';
 
 storeOp :
     'store' '(' storeaction ',' storeContent ',' storeID ')';
