@@ -23,7 +23,7 @@ game(id:TestGame){
     }
 
     interaction(id:TestMove, addressee:TestUser, content:{p}, opener:"Test"){
-      save({p},$TestVar$);
+      save({p,"test"},$TestVar$);
       if(inrole(Player, Test)){
         move(add, next, Test2, $Test, TestPlayer);
       }

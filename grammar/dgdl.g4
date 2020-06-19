@@ -114,7 +114,7 @@ unassignment :
 user : identifier;
 
 save :
-    'save' '(' content ',' runtimeVar ')';
+    'save' '(' storeContent ',' runtimeVar ')';
 
 runtimeVar :
     '$' identifier '$';
