@@ -134,7 +134,7 @@ class RuleInteractionBuilder(BaseDGDLBuilder):
         self.current_effect_target(UnassignEffect(user, role))
 
     def enterSave(self, ctx):
-        content = ctx.content()
+        content = ctx.storeContent()
         content = [c.getText() for c in content.contentVar()] + [s.getText() for s in content.STRINGLITERAL()]
 
         variable = ctx.runtimeVar().identifier().getText()
