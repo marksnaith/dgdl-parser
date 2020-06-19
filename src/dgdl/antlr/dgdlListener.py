@@ -368,6 +368,24 @@ class dgdlListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by dgdlParser#save.
+    def enterSave(self, ctx:dgdlParser.SaveContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#save.
+    def exitSave(self, ctx:dgdlParser.SaveContext):
+        pass
+
+
+    # Enter a parse tree produced by dgdlParser#runtimeVar.
+    def enterRuntimeVar(self, ctx:dgdlParser.RuntimeVarContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#runtimeVar.
+    def exitRuntimeVar(self, ctx:dgdlParser.RuntimeVarContext):
+        pass
+
+
     # Enter a parse tree produced by dgdlParser#conditional.
     def enterConditional(self, ctx:dgdlParser.ConditionalContext):
         pass

@@ -133,6 +133,14 @@ class RuleInteractionBuilder(BaseDGDLBuilder):
 
         self.current_effect_target(UnassignEffect(user, role))
 
+    def enterSave(Self, ctx):
+        content = ctx.content()
+        content = [c.getText() for c in content.contentVar()]
+
+        variable = ctx.runtimeVar().identifier().getText()
+
+        self.current_effect_target(SaveEffect(content, variable))
+
     # Methods to be overridden by child classes
     def add_effect(self, effect):
         return

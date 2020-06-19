@@ -76,7 +76,7 @@ effects :
     effect+; // (effect)*;
 
 effect :
-    (move | storeOp | statusUpdate | roleAssignment) ';';
+    (move | storeOp | statusUpdate | roleAssignment | save) ';';
 
 move :
   'move' '(' moveaction ',' movetime ',' moveID (',' addressee)? (',' content)? (',' user)? ')';
@@ -112,6 +112,12 @@ unassignment :
     'unassign' '(' user ',' role ')';
 
 user : identifier;
+
+save :
+    'save' '(' content ',' runtimeVar ')';
+
+runtimeVar :
+    '$' identifier '$';
 
 conditional :
     'if' '(' requirements ')' '{' effects '}' condelseif? condelse? ';'?;
