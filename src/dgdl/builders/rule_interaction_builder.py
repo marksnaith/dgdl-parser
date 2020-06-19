@@ -133,7 +133,7 @@ class RuleInteractionBuilder(BaseDGDLBuilder):
 
         self.current_effect_target(UnassignEffect(user, role))
 
-    def enterSave(Self, ctx):
+    def enterSave(self, ctx):
         content = ctx.content()
         content = [c.getText() for c in content.contentVar()]
 
