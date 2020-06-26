@@ -431,6 +431,15 @@ class dgdlListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by dgdlParser#eventContent.
+    def enterEventContent(self, ctx:dgdlParser.EventContentContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#eventContent.
+    def exitEventContent(self, ctx:dgdlParser.EventContentContext):
+        pass
+
+
     # Enter a parse tree produced by dgdlParser#roleInspection.
     def enterRoleInspection(self, ctx:dgdlParser.RoleInspectionContext):
         pass

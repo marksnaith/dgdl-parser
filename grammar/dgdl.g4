@@ -132,7 +132,7 @@ event :
     'event' '(' eventpos ',' moveID  (',' eventContent)? (',' user)? ')';
 
 eventpos :
-    ('last' | '!last' | 'past' | '!past');
+    ('last' | 'past');
 
 eventContent :
     '{' (runtimeVar | STRINGLITERAL) (',' runtimeVar | STRINGLITERAL)* '}';
