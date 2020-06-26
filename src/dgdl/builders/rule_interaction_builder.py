@@ -73,7 +73,7 @@ class RuleInteractionBuilder(BaseDGDLBuilder):
     def enterEvent(self, ctx):
         eventpos = ctx.eventpos().getText()
         moveID = ctx.moveID().getText()
-        content = ctx.content()
+        content = ctx.eventContent()
 
         if content is not None:
             content = [c.getText() for c in content.runtimeVar()] + [c.getText() for c in content.STRINGLITERAL()]
