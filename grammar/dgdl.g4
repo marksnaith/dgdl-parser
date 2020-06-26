@@ -129,10 +129,13 @@ condition :
     NEG? (event | roleInspection | storeInspection);
 
 event :
-    'event' '(' eventpos ',' moveID  (',' content)? (',' user)? ')';
+    'event' '(' eventpos ',' moveID  (',' eventContent)? (',' user)? ')';
 
 eventpos :
     ('last' | '!last' | 'past' | '!past');
+
+eventContent :
+    '{' (runtimeVar | STRINGLITERAL) (',' runtimeVar | STRINGLITERAL)* '}';
 
 roleInspection :
     'inrole' '(' playerID ',' role ')';

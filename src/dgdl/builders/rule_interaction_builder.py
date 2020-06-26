@@ -76,7 +76,7 @@ class RuleInteractionBuilder(BaseDGDLBuilder):
         content = ctx.content()
 
         if content is not None:
-            content = [c.getText() for c in content.contentVar()]
+            content = [c.getText() for c in content.runtimeVar()] + [c.getText() for c in content.STRINGLITERAL()]
 
         user = ctx.user()
 

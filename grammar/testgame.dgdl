@@ -11,7 +11,7 @@ game(id:TestGame){
 
     rule(id:TestRule, scope:initial){
         move(add, next, TestMove, $User, {p});
-        if (!inrole(Player, Test) && inspect(in, {p}, TestStore, past) && event(past, TestMove, {p}, TestUser)){
+        if (!inrole(Player, Test) && inspect(in, {p}, TestStore, past) && event(past, TestMove, {"p", $TestVar$})){
           move(add, next, Test, Test);
         }else{
           move(add, next, Test, Test);
