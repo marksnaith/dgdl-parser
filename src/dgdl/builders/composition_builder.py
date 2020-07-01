@@ -55,7 +55,7 @@ class CompositionBuilder(BaseDGDLBuilder):
             else:
                 max = int(max)
 
-        roles = ctx.roleList()
+        roles = ctx.playerRoleList()
 
         if roles is not None:
             roles = [r.getText() for r in roles.role()]

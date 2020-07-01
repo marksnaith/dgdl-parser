@@ -27,9 +27,12 @@ participants :
     'participants' '(' 'min' ':' minplayers ',' 'max' ':' maxplayers ')';
 
 player :
-    'player' '(' 'id' ':' playerID (',' roleList)? (',' 'min' ':' minplayers)? (',' 'max' ':' maxplayers)? ')';
+    'player' '(' 'id' ':' playerID (',' playerRoleList)? (',' 'min' ':' minplayers)? (',' 'max' ':' maxplayers)? ')';
 
 playerID : identifier;
+
+playerRoleList :
+    'roles' ':' '{' role (',' role)* '}';
 
 store :
     'store' '(' 'id' ':' storeID ',' 'owner' ':' storeOwner ',' 'structure' ':' storeStructure ',' 'visibility' ':' storeVisibility (',' storeContent)? ')';

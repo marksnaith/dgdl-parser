@@ -80,6 +80,15 @@ class dgdlListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by dgdlParser#playerRoleList.
+    def enterPlayerRoleList(self, ctx:dgdlParser.PlayerRoleListContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#playerRoleList.
+    def exitPlayerRoleList(self, ctx:dgdlParser.PlayerRoleListContext):
+        pass
+
+
     # Enter a parse tree produced by dgdlParser#store.
     def enterStore(self, ctx:dgdlParser.StoreContext):
         pass
