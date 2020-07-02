@@ -16,7 +16,7 @@ class DGDLElement:
             if k[0] != "_":
                 repr[k] = self.__dict__[k]
 
-        return repr
+        return str(repr)
 
     def __str__(self):
         return str(self.__repr__())
@@ -24,10 +24,11 @@ class DGDLElement:
     def to_json(self):
 
         result = {}
-        for k,v in self.__repr__().items():
-            if isinstance(v, DGDLElement):
-                result[k] = v.to_json()
-            else:
-                result[k] = v
+        for k,v in self.__dict__.items():
+            if k[0] != "_":
+                if isinstance(v, DGDLElement):
+                    result[k] = v.to_json()
+                else:
+                    result[k] = v
 
         return result
