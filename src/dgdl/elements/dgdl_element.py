@@ -25,7 +25,9 @@ class DGDLElement:
 
         result = {}
         for k,v in self.__repr__().items():
-            if isinstance(k, DGDLElement):
+            if isinstance(v, DGDLElement):
                 result[k] = v.to_json()
+            else:
+                result[k] = v
 
         return result
