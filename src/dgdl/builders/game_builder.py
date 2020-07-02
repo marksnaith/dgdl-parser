@@ -14,9 +14,16 @@ class GameBuilder:
                          RuleBuilder(),
                          InteractionBuilder()]
 
-    def build(self, src):
+    def build(self, file=None, input=None):
 
-        parser = dgdlParser(CommonTokenStream(dgdlLexer(FileStream(src))))
+        if input is not None:
+            s = InputStream(input)
+        elif file is not None:
+            s = FileStream(file)
+        else:
+            return None
+
+        parser = dgdlParser(CommonTokenStream(dgdlLexer(s)))
 
         # assign stderr to a temporary stream to capture errors
         sys.stderr = tmp = StringIO()
