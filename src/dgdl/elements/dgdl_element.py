@@ -20,3 +20,11 @@ class DGDLElement:
 
     def __str__(self):
         return str(self.__repr__())
+
+    def to_json(self):
+
+        result = {}
+        for k,v in self.__repr__().items():
+            result[k] = v.to_json()
+
+        return result
