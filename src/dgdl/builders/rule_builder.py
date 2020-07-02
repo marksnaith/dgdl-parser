@@ -21,9 +21,7 @@ class RuleBuilder(RuleInteractionBuilder):
         self.current_rule = None
 
     def add_effect(self, effect):
-        print("Adding effect " + str(effect) + " to rule")
         if self.current_rule is not None:
-            print("adding")
             self.current_rule.effects.append(effect)
 
     def add_conditional(self, conditional):
