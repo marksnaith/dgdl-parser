@@ -16,7 +16,7 @@ class DGDLElement:
             if k[0] != "_":
                 repr[k] = self.__dict__[k]
 
-        return str(repr)
+        return repr
 
     def __str__(self):
         return str(self.__repr__())
