@@ -8,7 +8,7 @@ class DGDLParser:
         self.parsed = {}
 
     def parse(self, file=None, input=None):
-        self.parsed = GameBuilder().build(**{file:file, input:input})
+        self.parsed = GameBuilder().build(**{"file":file, "input":input})
         return self.parsed
 
     def json(self):
