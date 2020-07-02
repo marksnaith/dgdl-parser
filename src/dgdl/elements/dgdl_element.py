@@ -27,8 +27,10 @@ class DGDLElement:
         for k,v in self.__dict__.items():
             if k[0] != "_":
                 if isinstance(v, DGDLElement):
+                    print(str(v) + " is dgdl element")
                     result[k] = v.to_json()
                 else:
+                    print(str(v) + " is NOT dgdl element")
                     result[k] = v
 
         return result
