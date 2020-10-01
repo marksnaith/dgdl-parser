@@ -16,7 +16,7 @@ game :
 
 gameID : identifier;
 
-composition: roleList? participants player+ store* turntaking? backtrack?;
+composition: roleList? participants player+ store* turntaking? backtrack? extURI*;
 
 roleList :
     'roles' '(' role (',' role)* ')';
@@ -60,6 +60,11 @@ backtrack :
     'backtracking' '(' onoff ')';
 
 onoff : ('on' | 'off');
+
+extURI:
+    'extURI' '(' 'id' ':' extUriID ',' 'uri' ':' STRINGLITERAL ')';
+
+extUriID : identifier;
 
 minplayers : number;
 maxplayers : (number | 'undefined');

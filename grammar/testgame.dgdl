@@ -9,6 +9,9 @@ game(id:TestGame){
 
     backtracking(on)
 
+    extURI(id:MyURI, uri:"http://arg.tech/test")
+    extURI(id:MyOtherURI, uri:"http://arg.tech/test2")
+
     rule(id:TestRule, scope:initial){
         move(add, next, TestMove, $User, {p});
         if (!inrole(Player, Test) && inspect(in, {p}, TestStore, past) && event(past, TestMove, {"p", $TestVar$})){
