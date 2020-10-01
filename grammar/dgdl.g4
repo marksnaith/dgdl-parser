@@ -134,7 +134,7 @@ requirements :
     (condition (AMPAND condition)* );
 
 condition :
-    NEG? (event | roleInspection | storeInspection);
+    NEG? (event | roleInspection | storeInspection | uriTest);
 
 event :
     'event' '(' eventpos ',' moveID  (',' eventContent)? (',' user)? ')';
@@ -155,6 +155,8 @@ storepos : ('in' | 'on' | 'top' );
 
 storetime : ('initial' | 'past' | 'current');
 
+uriTest :
+    'uriTest' '(' extUriID ')';
 
 condelseif :
     'elseif ' requirements 'then' '{' effects '}' condelseif? condelse?;
