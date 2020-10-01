@@ -179,6 +179,33 @@ class dgdlListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by dgdlParser#extURI.
+    def enterExtURI(self, ctx:dgdlParser.ExtURIContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#extURI.
+    def exitExtURI(self, ctx:dgdlParser.ExtURIContext):
+        pass
+
+
+    # Enter a parse tree produced by dgdlParser#uri.
+    def enterUri(self, ctx:dgdlParser.UriContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#uri.
+    def exitUri(self, ctx:dgdlParser.UriContext):
+        pass
+
+
+    # Enter a parse tree produced by dgdlParser#extUriID.
+    def enterExtUriID(self, ctx:dgdlParser.ExtUriIDContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#extUriID.
+    def exitExtUriID(self, ctx:dgdlParser.ExtUriIDContext):
+        pass
+
+
     # Enter a parse tree produced by dgdlParser#minplayers.
     def enterMinplayers(self, ctx:dgdlParser.MinplayersContext):
         pass
@@ -482,6 +509,15 @@ class dgdlListener(ParseTreeListener):
 
     # Exit a parse tree produced by dgdlParser#storetime.
     def exitStoretime(self, ctx:dgdlParser.StoretimeContext):
+        pass
+
+
+    # Enter a parse tree produced by dgdlParser#uriTest.
+    def enterUriTest(self, ctx:dgdlParser.UriTestContext):
+        pass
+
+    # Exit a parse tree produced by dgdlParser#uriTest.
+    def exitUriTest(self, ctx:dgdlParser.UriTestContext):
         pass
 
 

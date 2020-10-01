@@ -62,7 +62,9 @@ backtrack :
 onoff : ('on' | 'off');
 
 extURI:
-    'extURI' '(' 'id' ':' extUriID ',' 'uri' ':' STRINGLITERAL ')';
+    'extURI' '(' 'id' ':' extUriID ',' 'uri' ':' uri ')';
+
+uri : STRINGLITERAL;
 
 extUriID : identifier;
 

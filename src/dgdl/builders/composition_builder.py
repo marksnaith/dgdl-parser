@@ -12,7 +12,8 @@ class CompositionBuilder(BaseDGDLBuilder):
             "stores": [],
             "turntaking": "strict",
             "backtracking": False,
-            "interactions": []
+            "interactions": [],
+            "extURI": {}
         }
         self.current_player = None
 
@@ -91,6 +92,12 @@ class CompositionBuilder(BaseDGDLBuilder):
     def enterTurntaking(self, ctx):
         if ctx.turntakingtype() is not None:
             self.composition["turntaking"] = ctx.turntakingtype().getText()
+
+    def enterExtURI(self, ctx):
+        id = ctx.extUriID().getText()
+        uri = ctx.uri().STRINGLITERAL().getText()
+
+        self.composition["extURI"][id] = uri[1:-1]
 
     def get_representation(self):
         return self.composition
