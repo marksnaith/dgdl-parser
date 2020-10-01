@@ -141,6 +141,12 @@ class RuleInteractionBuilder(BaseDGDLBuilder):
 
         self.current_effect_target(SaveEffect(content, variable))
 
+    def enterUriTest(self, ctx):
+        id = ctx.extUriID().getText()
+
+        uri = URITestRequirement(self.current_conditional_negated, id)
+        self.current_conditional.add_requirement(uri)
+
     # Methods to be overridden by child classes
     def add_effect(self, effect):
         return
