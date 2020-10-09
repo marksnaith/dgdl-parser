@@ -50,7 +50,7 @@ This will generate the python files and place them in the ../src/dgdl/antlr dire
 To use your new extensions, either:
 
 <ol>
-<li> Modify an existing file in src/dgdl/antlr/builders (e.g. if you add a new effect, modify rule_interaction_builder.py); or
+<li> Modify an existing file in src/dgdl/builders (e.g. if you add a new effect, modify rule_interaction_builder.py); or
 
-<li> Create a new builder (in src/dgdl/antlr/builders) that inherits BaseDGDLBuilder. Then add your new builder to the list of builders in game_builder.py
+<li> Create a new builder (in src/dgdl/builders) that inherits BaseDGDLBuilder. Then add your new builder to the list of builders in game_builder.py
 </ol>
