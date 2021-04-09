@@ -23,7 +23,7 @@ import sys
 if sys.version_info[1] > 5:
 	from typing import TextIO
 else:
-	from typing.io import TextIO
+	from typing.io import TextI0
 
 
 def serializedATN():
@@ -31,8 +31,8 @@ def serializedATN():
         buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3X")
         buf.write("\u027b\4\2	\2\4\3	\3\4\4	\4\4\5	\5\4\6	\6\4\7	\7")
         buf.write("\4	\4			\4
-	
-\4\13	\13\4	\4	\4\16")
+
+\4\13	\13\4\4	\4\16")
         buf.write("	\16\4\17	\17\4\20	\20\4\21	\21\4\22	\22\4\23	\23")
         buf.write("\4\24	\24\4\25	\25\4\26	\26\4\27	\27\4\30	\30\4\31")
         buf.write("	\31\4\32	\32\4\33	\33\4\34	\34\4\35	\35\4\36	\36")
@@ -305,7 +305,7 @@ def serializedATN():
         buf.write("\2\u01b6K\3\2\2\2\u01b7\u01b8		\2\2\u01b8M\3\2\2\2\u01b9")
         buf.write("\u01ba\7(\2\2\u01ba\u01bb\7\4\2\2\u01bb\u01bc\5P)\2\u01bc")
         buf.write("\u01bd\7\13\2\2\u01bd\u01be\5\u0080A\2\u01be\u01bf\7\7")
-        buf.write("\2\2\u01bfO\3\2\2\2\u01c0\u01c1	
+        buf.write("\2\2\u01bfO\3\2\2\2\u01c0\u01c1
 \2\2\u01c1Q\3\2\2\2")
         buf.write("\u01c2\u01c5\5T+\2\u01c3\u01c5\5V,\2\u01c4\u01c2\3\2\2")
         buf.write("\2\u01c4\u01c3\3\2\2\2\u01c5S\3\2\2\2\u01c6\u01c7\7.\2")
@@ -358,8 +358,8 @@ def serializedATN():
         buf.write("\3\2\2\2\u0232\u0233\3\2\2\2\u0233\u0236\3\2\2\2\u0234")
         buf.write("\u0235\7\13\2\2\u0235\u0237\5p9\2\u0236\u0234\3\2\2\2")
         buf.write("\u0236\u0237\3\2\2\2\u0237\u0238\3\2\2\2\u0238\u0239\7")
-        buf.write("\7\2\2\u0239m\3\2\2\2\u023a\u023b	\2\2\u023bo\3\2\2")
-        buf.write("\2\u023c\u023d	\2\2\u023dq\3\2\2\2\u023e\u023f\7:\2")
+        buf.write("\7\2\2\u0239m\3\2\2\2\u023a\u023b\2\2\u023bo\3\2\2")
+        buf.write("\2\u023c\u023d\2\2\u023dq\3\2\2\2\u023e\u023f\7:\2")
         buf.write("\2\u023f\u0240\7\4\2\2\u0240\u0241\5,\27\2\u0241\u0242")
         buf.write("\7\7\2\2\u0242s\3\2\2\2\u0243\u0244\7;\2\2\u0244\u0245")
         buf.write("\5`\61\2\u0245\u0246\7<\2\2\u0246\u0247\7\2\2\u0247")
@@ -401,44 +401,44 @@ class dgdlParser ( Parser ):
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ "<INVALID>", "'game'", "'('", "'id'", "':'", "')'", 
-                     "'{'", "'}'", "'roles'", "','", "'participants'", "'min'", 
-                     "'max'", "'player'", "'store'", "'owner'", "'structure'", 
-                     "'visibility'", "'turntaking'", "'strict'", "'liberal'", 
-                     "'backtracking'", "'on'", "'off'", "'extURI'", "'uri'", 
-                     "'undefined'", "'rule'", "'scope'", "';'", "'move'", 
-                     "'add'", "'delete'", "'next'", "'future'", "'$'", "'remove'", 
-                     "'empty'", "'status'", "'active'", "'inactive'", "'complete'", 
-                     "'incomplete'", "'terminate'", "'assign'", "'unassign'", 
-                     "'save'", "'if'", "'event'", "'last'", "'past'", "'inrole'", 
-                     "'inspect'", "'in'", "'top'", "'current'", "'uriTest'", 
-                     "'elseif '", "'then'", "'else'", "'interaction'", "'addressee'", 
-                     "'content'", "'opener'", "<INVALID>", "<INVALID>", 
-                     "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "<INVALID>", "'&&'", "'!'", "<INVALID>", "'listener'", 
-                     "'speaker'", "'initial'", "'turnwise'", "'movewise'", 
+    literalNames = [ "<INVALID>", "'game'", "'('", "'id'", "':'", "')'",
+                     "'{'", "'}'", "'roles'", "','", "'participants'", "'min'",
+                     "'max'", "'player'", "'store'", "'owner'", "'structure'",
+                     "'visibility'", "'turntaking'", "'strict'", "'liberal'",
+                     "'backtracking'", "'on'", "'off'", "'extURI'", "'uri'",
+                     "'undefined'", "'rule'", "'scope'", "';'", "'move'",
+                     "'add'", "'delete'", "'next'", "'future'", "'$'", "'remove'",
+                     "'empty'", "'status'", "'active'", "'inactive'", "'complete'",
+                     "'incomplete'", "'terminate'", "'assign'", "'unassign'",
+                     "'save'", "'if'", "'event'", "'last'", "'past'", "'inrole'",
+                     "'inspect'", "'in'", "'top'", "'current'", "'uriTest'",
+                     "'elseif '", "'then'", "'else'", "'interaction'", "'addressee'",
+                     "'content'", "'opener'", "<INVALID>", "<INVALID>",
+                     "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
+                     "<INVALID>", "'&&'", "'!'", "<INVALID>", "'listener'",
+                     "'speaker'", "'initial'", "'turnwise'", "'movewise'",
                      "'set'", "'queue'", "'stack'", "'public'", "'private'" ]
 
-    symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "Identifier", "LowerChar", "UpperChar", "Number", 
-                      "WS", "MOVEACTION", "MOVETIME", "AMPAND", "NEG", "ONOFF", 
-                      "LISTENER", "SPEAKER", "INITIAL", "TURNWISE", "MOVEWISE", 
-                      "SET", "QUEUE", "STACK", "PUBLIC", "PRIVATE", "STRINGLITERAL", 
+    symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
+                      "Identifier", "LowerChar", "UpperChar", "Number",
+                      "WS", "MOVEACTION", "MOVETIME", "AMPAND", "NEG", "ONOFF",
+                      "LISTENER", "SPEAKER", "INITIAL", "TURNWISE", "MOVEWISE",
+                      "SET", "QUEUE", "STACK", "PUBLIC", "PRIVATE", "STRINGLITERAL",
                       "COMMENT", "LINE_COMMENT" ]
 
     RULE_game = 0
@@ -508,19 +508,19 @@ class dgdlParser ( Parser ):
     RULE_number = 64
     RULE_contentVar = 65
 
-    ruleNames =  [ "game", "gameID", "composition", "roleList", "role", 
-                   "participants", "player", "playerID", "playerRoleList", 
-                   "store", "storeID", "storeOwner", "storeStructure", "storeVisibility", 
-                   "storeContent", "turntaking", "turntakingtype", "backtrack", 
-                   "onoff", "extURI", "uri", "extUriID", "minplayers", "maxplayers", 
-                   "rules", "ruleID", "scopeType", "ruleBody", "effects", 
-                   "effect", "move", "moveaction", "movetime", "moveID", 
-                   "addressee", "content", "storeOp", "storeaction", "statusUpdate", 
-                   "status", "roleAssignment", "assignment", "unassignment", 
-                   "user", "save", "runtimeVar", "conditional", "requirements", 
-                   "condition", "event", "eventpos", "eventContent", "roleInspection", 
-                   "storeInspection", "storepos", "storetime", "uriTest", 
-                   "condelseif", "condelse", "interaction", "opener", "upperChar", 
+    ruleNames =  [ "game", "gameID", "composition", "roleList", "role",
+                   "participants", "player", "playerID", "playerRoleList",
+                   "store", "storeID", "storeOwner", "storeStructure", "storeVisibility",
+                   "storeContent", "turntaking", "turntakingtype", "backtrack",
+                   "onoff", "extURI", "uri", "extUriID", "minplayers", "maxplayers",
+                   "rules", "ruleID", "scopeType", "ruleBody", "effects",
+                   "effect", "move", "moveaction", "movetime", "moveID",
+                   "addressee", "content", "storeOp", "storeaction", "statusUpdate",
+                   "status", "roleAssignment", "assignment", "unassignment",
+                   "user", "save", "runtimeVar", "conditional", "requirements",
+                   "condition", "event", "eventpos", "eventContent", "roleInspection",
+                   "storeInspection", "storepos", "storetime", "uriTest",
+                   "condelseif", "condelse", "interaction", "opener", "upperChar",
                    "lowerChar", "identifier", "number", "contentVar" ]
 
     EOF = Token.EOF
@@ -698,13 +698,13 @@ class dgdlParser ( Parser ):
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
-            self.state = 147 
+            self.state = 147
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
                 self.state = 146
                 self.interaction()
-                self.state = 149 
+                self.state = 149
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if not (_la==dgdlParser.T__59):
@@ -838,13 +838,13 @@ class dgdlParser ( Parser ):
 
             self.state = 159
             self.participants()
-            self.state = 161 
+            self.state = 161
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
                 self.state = 160
                 self.player()
-                self.state = 163 
+                self.state = 163
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if not (_la==dgdlParser.T__12):
@@ -1481,7 +1481,7 @@ class dgdlParser ( Parser ):
                 self.match(dgdlParser.T__5)
                 self.state = 276
                 self.identifier()
-                self.state = 279 
+                self.state = 279
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while True:
@@ -1489,7 +1489,7 @@ class dgdlParser ( Parser ):
                     self.match(dgdlParser.T__8)
                     self.state = 278
                     self.identifier()
-                    self.state = 281 
+                    self.state = 281
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
                     if not (_la==dgdlParser.T__8):
@@ -2388,13 +2388,13 @@ class dgdlParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 370 
+            self.state = 370
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
                 self.state = 369
                 self.effect()
-                self.state = 372 
+                self.state = 372
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << dgdlParser.T__13) | (1 << dgdlParser.T__29) | (1 << dgdlParser.T__37) | (1 << dgdlParser.T__43) | (1 << dgdlParser.T__44) | (1 << dgdlParser.T__45))) != 0)):
