@@ -50,8 +50,7 @@ class GameBuilder:
         val = tmp.getvalue().strip()
 
         if val != "":
-            errors = val.split("
-")
+            errors = val.split("\n")
             return errors
 
         walker = ParseTreeWalker()
