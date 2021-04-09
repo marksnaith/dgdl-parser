@@ -31,7 +31,7 @@ if [[ "$1" == "test" ]]; then
   fi
   mkdir test
 
-  antlr4 -o ./test *.g4
+  java -jar /usr/local/lib/antlr-4.8-complete.jar -o ./test *.g4
 
   if [[ $? -ne 0 ]]; then
     echo "Grammar compile failed"
@@ -50,7 +50,7 @@ if [[ "$1" == "test" ]]; then
 
     cd ./test
 
-    echo $TEXT | grun dgdl game -gui
+    echo $TEXT | java org.antlr.v4.gui.TestRig dgdl game -gui
 
     #cleanup
     rm -rf `pwd`
@@ -59,7 +59,7 @@ if [[ "$1" == "test" ]]; then
 
     echo "Enter expression:"
 
-    grun dgdl game -gui
+    java org.antlr.v4.gui.TestRig dgdl game -gui
   fi
 else
 
@@ -76,7 +76,7 @@ else
   fi
   mkdir $OUTPUT
 
-  antlr4 -o $OUTPUT -Dlanguage=Python3 *.g4
+  java -jar /usr/local/lib/antlr-4.8-complete.jar -o $OUTPUT -Dlanguage=Python3 *.g4
 
   echo 'from dgdl.antlr.dgdlListener import dgdlListener' > $OUTPUT/__init__.py
   echo 'from dgdl.antlr.dgdlLexer import dgdlLexer' >> $OUTPUT/__init__.py
